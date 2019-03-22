@@ -1,7 +1,7 @@
 <?php
-$servername = "206.189.189.104";
-$username = "dmacc";
-$password = "dmacc";
+$servername = "HIDDEN";
+$username = "HIDDEN";
+$password = "HIDDEN";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=wdv341", $username, $password);
