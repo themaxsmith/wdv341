@@ -1,13 +1,12 @@
 <?php
-$servername = "HIDDEN";
-$username = "HIDDEN";
-$password = "HIDDEN";
+$servername = "206.189.189.104";
+$username = "dmacc";
+$password = "dmacc";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=wdv341", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
     }
 catch(PDOException $e)
     {

@@ -73,8 +73,8 @@ session_start();
 
 ?>
 		<h3>Options</h3>
-        <p><a href="#">New Event</a></p>
-        <p><a href="#">List Events</a></p>
+        <p><a href="../unit8/eventsForm.php">New Event</a></p>
+        <p><a href="displayEvents.php">List Events</a></p>
         <p><a href="logout.php">Logout</a></p>
 <?php
 	}

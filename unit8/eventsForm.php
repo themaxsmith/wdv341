@@ -1,4 +1,11 @@
 <?php
+session_cache_limiter('none');
+session_start();
+
+if ($_SESSION['validUser'] != "yes")
+{
+  header('Location: ../unit11/login.php');
+}
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require("../unit7/connection.php");
@@ -38,6 +45,7 @@ if ($vaild){
         'event_time' => $_POST["event_time"]
     ]);
       echo "New record created successfully";
+      	header('Location: ../unit11/displayEvents.php?message=insert_success');
       }
   catch(PDOException $e)
       {
@@ -64,3 +72,4 @@ if ($vaild){
     <input type="submit" name="submit" id="submit" value="Submit">
 
 </form>
+<a href="../unit11/login.php">Go Back Home</a>
