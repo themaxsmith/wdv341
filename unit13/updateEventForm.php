@@ -60,7 +60,7 @@ require("../unit7/connection.php");
 
 
 
-$stmt = $conn->prepare("SELECT * FROM wdv341_event WHERE event_id=?");
+$stmt = $conn->prepare("SELECT * FROM wineries WHERE id=?");
 $stmt->execute(array($_GET["id"]));
 $row = $stmt->fetch();
 	?>
@@ -70,12 +70,10 @@ $row = $stmt->fetch();
 	}
 	</style>
 	<form name="form" method="post" action="#">
-	    Event ID: <input type="text" name="id" value="<?php echo $_GET["id"]?>" id="event_id"><br />
-	    Presenter Name: <input type="text" name="event_presenter"  value="<?php echo $row["event_presenter"]?>" id="event_presenter"><br />
-	    Event Name: <input type="text" name="event_name" value="<?php echo $row["event_name"]?>" id="event_name"><br />
-	    Description: <textarea rows="4" cols="50" name="event_description"   id="event_description"><?php echo $row["event_description"];?></textarea><br />
-	    Event: <input type="date" value="<?php echo $row["event_date"]?>" name="event_date"><br />
-	    Time: <input type="time"  value="<?php echo $row["event_time"]?>" name="event_time"><br />
+	    Location ID: <input type="text" name="id" value="<?php echo $_GET["id"]?>" id="event_id"><br />
+	    Location Name: <input type="text" name="event_presenter"  value="<?php echo $row["name"]?>" id="event_presenter"><br />
+	    Address: <input type="text" name="address" value="<?php echo $row["address"]?>" id="event_name"><br />
+	    Image URL: <input type="text" name="image_url" value="<?php echo $row["image_url"]?>" id="event_name"><br />
 	    <span id="event_location">Location: <input type="text" name="event_location"></span><br />
 	    <input type="submit" name="submit" id="submit" value="Submit">
 
